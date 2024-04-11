@@ -1,3 +1,9 @@
+document.body.addEventListener('click', e => {
+    if(e.target.id == 'jogar-novamente'){
+        window.location.reload()
+    }
+})
+
 function verificaChute(chute){
     const numero =+ chute
 
@@ -14,6 +20,8 @@ function verificaChute(chute){
     if(numero === numeroSecreto){
         document.body.innerHTML = `
             <h1>Parabéns você acertou! O número secreto era ${numeroSecreto}</h1>
+            <button id="jogar-novamente">Clique aqui para jogar novamente</button>
+
         `
     }
 
