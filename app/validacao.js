@@ -4,9 +4,12 @@ document.body.addEventListener('click', e => {
     }
 })
 
+const elementoTentativas = document.getElementById('tentativas')
+let tentativas = 11
+
+
 function verificaChute(chute){
     const numero =+ chute
-    const tentativas = 10
 
     if(Number.isNaN(numero)){ // NaN = not a number // se NaN for verdadeiro, executa o if
         elementoChute.innerHTML += `<div class="aviso">Valor inválido</div>`
@@ -28,17 +31,26 @@ function verificaChute(chute){
 
     if(numero < numeroSecreto){
         elementoChute.innerHTML += `<div>O número secreto é maior <i class="fa-solid fa-arrow-up"></i></div>`
-        tentativas -= 1
-
+        numeroTentativas()
     }
 
     else if(numero > numeroSecreto){
         elementoChute.innerHTML += `<div>O número secreto é menor <i class="fa-solid fa-arrow-down"></i></div>`
-        tentativas -= 1
+        numeroTentativas()     
     }
 
-    if (tentativas != 0){
-        elementoChute.innerHTML += `<div id="tentativas">Número de tentativas restantes: </div>`
-    }
     
+}
+
+function numeroTentativas(){
+    if(tentativas > 0){
+        tentativas--
+        elementoTentativas.innerHTML = `<div>Tentativas: ${tentativas}</div>`
+    }else{
+        document.body.innerHTML = `
+            <h1>Você perdeu! Tente novamente, tenho certeza que você vai conseguir!</h1>
+            <button id="jogar-novamente">Clique aqui para jogar novamente</button>
+
+        `
+    }
 }

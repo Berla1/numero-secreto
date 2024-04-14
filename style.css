@@ -33,7 +33,6 @@ h2{
 }
 
 .mensagem h3{
-    display: flex;
     font-weight: 400;
     font-size: 30px;
 }

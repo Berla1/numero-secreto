@@ -4,6 +4,7 @@ const caixaValor = document.getElementById('.caixa')
 const elementoChute = document.getElementById('chute')
 
 
+
 recognition.lang = 'pt-br'
 recognition.start()
 
