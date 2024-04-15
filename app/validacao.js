@@ -5,7 +5,7 @@ document.body.addEventListener('click', e => {
 })
 
 const elementoTentativas = document.getElementById('tentativas')
-let tentativas = 11
+let tentativas = 0
 
 
 function verificaChute(chute){
@@ -24,6 +24,7 @@ function verificaChute(chute){
     if(numero === numeroSecreto){
         document.body.innerHTML = `
             <h1>Parabéns você acertou! O número secreto era ${numeroSecreto}</h1>
+            <h2>Você encontrou o número secreto em ${tentativas} tentativas</h2>
             <button id="jogar-novamente">Clique aqui para jogar novamente</button>
 
         `
@@ -43,14 +44,8 @@ function verificaChute(chute){
 }
 
 function numeroTentativas(){
-    if(tentativas > 0){
-        tentativas--
-        elementoTentativas.innerHTML = `<div>Tentativas restantes: ${tentativas}</div>`
-    }else{
-        document.body.innerHTML = `
-            <h1>Você perdeu! Tente novamente, tenho certeza que você vai conseguir!</h1>
-            <button id="jogar-novamente">Clique aqui para jogar novamente</button>
-
-        `
+    if(tentativas >= 0){
+        tentativas++
+        elementoTentativas.innerHTML = `<div>Tentativas totais: ${tentativas}</div>`
     }
 }
