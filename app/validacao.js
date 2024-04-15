@@ -45,7 +45,7 @@ function verificaChute(chute){
 function numeroTentativas(){
     if(tentativas > 0){
         tentativas--
-        elementoTentativas.innerHTML = `<div>Tentativas: ${tentativas}</div>`
+        elementoTentativas.innerHTML = `<div>Tentativas restantes: ${tentativas}</div>`
     }else{
         document.body.innerHTML = `
             <h1>Você perdeu! Tente novamente, tenho certeza que você vai conseguir!</h1>
