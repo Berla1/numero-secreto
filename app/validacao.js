@@ -28,6 +28,7 @@ function verificaChute(chute){
             <button id="jogar-novamente">Clique aqui para jogar novamente</button>
 
         `
+        numeroTentativas()    
     }
 
     if(numero < numeroSecreto){
